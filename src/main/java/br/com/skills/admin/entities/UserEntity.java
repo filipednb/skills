@@ -2,16 +2,22 @@ package br.com.skills.admin.entities;
 
 import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
-@Entity
 @Data
-@Table(name = "user")
+@Entity
 public class UserEntity {
 
     @Id
     @GeneratedValue
-    private Long user_id;
+    private Long userId;
 
-    private String user_name;
+    private String userName;
+
+    private String email;
+
+    private String password;
+
 }
