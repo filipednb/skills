@@ -19,8 +19,8 @@ apply plugin: 'io.spring.dependency-management'
 
 group = 'br.com.skills.admin'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 10
-targetCompatibility = 10
+sourceCompatibility = 8
+targetCompatibility = 8
 
 repositories {
 	mavenCentral()
