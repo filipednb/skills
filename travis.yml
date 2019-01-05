@@ -1,14 +1,18 @@
 language: java
 jdk: oraclejdk10
-# blocklist
+
 branches:
   except:
-  - legacy
   - develop
-  - experimental
-  - stable
 
-# safelist
 branches:
   only:
   - master
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: e7ed1f86-3cf6-4da6-b51a-b76721ac7ec0
+  app: skills-admin
+  on:
+    repo: filipednb/cd-showcase

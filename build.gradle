@@ -1,10 +1,9 @@
 buildscript {
 	ext {
-		springBootVersion = '2.0.4.RELEASE'
+		springBootVersion = '2.1.1.RELEASE'
 	}
 	repositories {
 		mavenCentral()
-		mavenLocal()
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -19,11 +18,12 @@ apply plugin: 'io.spring.dependency-management'
 
 group = 'br.com.skills.admin'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 8
-targetCompatibility = 8
+sourceCompatibility = 10
+targetCompatibility = 10
 
 repositories {
 	mavenCentral()
+	mavenLocal()
 }
 
 dependencies {
