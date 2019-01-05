@@ -10,3 +10,4 @@ deploy:
   app: skills-admin
   on:
     repo: filipednb/skills
+script: jdk_switcher use openjdk10
