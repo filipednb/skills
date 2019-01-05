@@ -1,18 +1,12 @@
 language: java
-jdk: oraclejdk10
-
-branches:
-  except:
-  - develop
-
+jdk: openjdk10
 branches:
   only:
   - master
-
 deploy:
   provider: heroku
   api_key:
-    secure: e7ed1f86-3cf6-4da6-b51a-b76721ac7ec0
+    secure: CjcRdbzF5+Q0hiL0qO28NKxKcmMNi6GRSQWhLzowZ0OC1Iod4plQF+iQEqLKrVDY5POUA7gN/O+z9uThwjngGwvFBi4BoAP6tG/fnLBKh/pdGcHhkWDDjWdX6r2U8l6djaPJzuQ02TBEugCt13d6apIwglkYCey5mPG5lhWw7k3oZnSZ8vD/UotEJUqA3yoK/IpGI1eDX9ZiRhAxRf1/+ZlzWdUGW9e8yZM7qDJuhuCPXnnNaMGnpRqYVQtcwvhxo5ontWjNWgvIaipqAi5NBqhBfhHCnUr+tc4aNCsBDHhrRFp+7Riv8rnfDSn+53EGaXgX1y/1cwX5VwbBT+ZBem4l21TbpUTMxdfoMA6kmMtRSaDZHbJWSnaJanXPbTJx8ZjjNVWt4mwgm+UN6RlxnHzJ9MkXR9bsNfx7Xg5HDhDDZjOzD8Od0EpD6Z3T+rdXEO01CJs6GHm+r+S09HwPph9PAcwFn48PcHFicstWeFOS1aowcFiWP372qvdleHxBM5kkG+61NeIWtHVSrD0cYuDQQfjbMdKkb8l/oZd+Ggi6RhACwYMAokZSHM3B1lQY5AkPg9JtLd6p6LJdue7BDU5Mf7sntmG0iZPeE7YzZVvwNC98KC6iZDlfjyQOXHRDbJSUAl4z7gDnFkuhgxo9YRelx7HdC5dh2OkwpJDJIZM=
   app: skills-admin
   on:
-    repo: filipednb/cd-showcase
+    repo: filipednb/skills
