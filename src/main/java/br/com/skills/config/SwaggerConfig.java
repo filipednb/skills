@@ -27,7 +27,8 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
         return new ApiInfo(
                 "Personal Skills Administrator",
-                "Personal project to study backend: Java, CI/CD, Spring Boot, Spring Data, Gradle, Unit Tests and development good pratices",
+                "Personal project to study backend: Java, CI/CD, Spring Boot, Spring Data, Gradle, " +
+                        "Unit Tests and development good pratices",
                 "API TOS",
                 "Terms of service",
                 new Contact("Filipe Tagliacozzi", "http://skills-admin.herokuapp.com", "filipednb@gmail.com"),
