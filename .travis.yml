@@ -10,4 +10,3 @@ deploy:
   app: skills-admin
   on:
     repo: filipednb/skills
-script: export JAVA_HOME=$HOME/openjdk10
