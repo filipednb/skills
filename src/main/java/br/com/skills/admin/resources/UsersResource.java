@@ -1,54 +1,44 @@
 package br.com.skills.admin.resources;
 
 import br.com.skills.admin.entities.UserEntity;
-import br.com.skills.admin.repositories.UserRepository;
+import br.com.skills.admin.repositories.UsersRepository;
 import io.swagger.annotations.ApiOperation;
-import org.h2.engine.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import javax.persistence.EntityNotFoundException;
 import javax.validation.Valid;
-import java.util.Optional;
-
+import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/usuario")
-public class UserResource {
+@RequestMapping("/api/v1/users")
+public class UsersResource {
 
     @Autowired
-    private UserRepository userRepository;
+    private UsersRepository usersRepository;
 
     @PostMapping
     @ApiOperation(value = "Creates a user", response = UserEntity.class)
-    public UserEntity createUser(@RequestParam @Valid String userName) {
-
+    public UserEntity createUser(@RequestParam @Valid String name) {
         UserEntity user = new UserEntity();
-        user.setUserName(userName);
-
-        userRepository.save(user);
-
+        user.setName(name);
+        usersRepository.save(user);
         return  user;
-
-
     }
 
-    @PostMapping("/login")
-    @ApiOperation(value = "Login into user account")
-    public String doLogin(@RequestParam("userName") String usuario, @RequestParam("password") String password) {
-
-        return  "ok";
-
+    @GetMapping
+    @ApiOperation(value = "Get all users", response = UserEntity.class)
+    public List<UserEntity> getAllUsers() {
+        return (List<UserEntity>) usersRepository.findAll();
     }
 
     @GetMapping("/{id}")
     @ApiOperation(value = "Find user by id", response = UserEntity.class)
     UserEntity findOne(@PathVariable Long id) {
-
-        return userRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("User not found, id=" + id.toString()));
-
+        return usersRepository.findById(id).orElseThrow(() ->
+                new ResponseStatusException(HttpStatus.NOT_FOUND, "Actor Not Found"));
     }
 
 

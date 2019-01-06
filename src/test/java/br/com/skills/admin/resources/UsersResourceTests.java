@@ -11,7 +11,7 @@ import static org.hamcrest.Matchers.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class UserResourceTests {
+public class UsersResourceTests {
 
     @Test
     public void deveCriarUmUsuario() {

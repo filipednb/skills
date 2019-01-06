@@ -8,16 +8,12 @@ import javax.persistence.Id;
 
 @Data
 @Entity
-public class UserEntity {
+public class SkillEntity {
 
     @Id
     @GeneratedValue
-    private Long userId;
+    private Long skillId;
 
-    private String name;
-
-    private String email;
-
-    private String password;
+    private String description;
 
 }
