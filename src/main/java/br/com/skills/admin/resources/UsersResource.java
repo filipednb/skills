@@ -33,7 +33,7 @@ public class UsersResource {
         user.setName(name);
         usersRepository.save(user);
 
-        String location = request.getRequestURL().toString() + "/" + user.getUserId().toString();
+        String location = request.getRequestURL().toString() + "/" + user.getId().toString();
 
         return ResponseEntity.status(HttpStatus.CREATED)
                 .header("Location:", location)

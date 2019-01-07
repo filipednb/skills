@@ -1,9 +1,7 @@
 package br.com.skills.admin.resources;
 
 import br.com.skills.admin.entities.SkillEntity;
-import br.com.skills.admin.entities.UserEntity;
 import br.com.skills.admin.repositories.SkillsRepository;
-import br.com.skills.admin.repositories.UsersRepository;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,7 +27,7 @@ public class SkillsResource {
         skill.setDescription(description);
         skillsRepository.save(skill);
 
-        String location = request.getRequestURL().toString() + "/" + skill.getSkillId().toString();
+        String location = request.getRequestURL().toString() + "/" + skill.getId().toString();
 
         return ResponseEntity.status(HttpStatus.CREATED)
                 .header("Location:", location)
