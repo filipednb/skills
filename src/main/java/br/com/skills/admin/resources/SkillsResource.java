@@ -41,13 +41,13 @@ public class SkillsResource {
 
     @GetMapping
     @ApiOperation(value = "Get all skills", response = SkillEntity.class)
-    public List<SkillEntity> getAllUsers() {
+    public List<SkillEntity> getAllSkills() {
         return (List<SkillEntity>) skillsRepository.findAll();
     }
 
     @GetMapping("/{id}")
     @ApiOperation(value = "Find skill by id", response = SkillEntity.class)
-    private SkillEntity findUser(@PathVariable Long id) {
+    private SkillEntity findSkill(@PathVariable Long id) {
         return skillsRepository.findById(id).orElseThrow(() ->
                 new ResponseStatusException(HttpStatus.NOT_FOUND, "Skill Not Found"));
     }
